@@ -2,6 +2,7 @@
 const navMenu = document.getElementById('nav-menu')
 const navToggle = document.getElementById('nav-toggle')
 const navClose = document.getElementById('nav-close')
+const header = document.getElementById('header')
 
 /*===== Menu Show ======== */
 if (navToggle) {
@@ -28,6 +29,14 @@ const linkAction = () => {
 navLink.forEach((n) => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
+const scrollHeader = () => {
+  // When the scroll is greater than 50 viewport height, add the scroll-header class
+  this.scrollY >= 50
+    ? header.classList.add('bg-header')
+    : header.classList.remove('bg-header')
+}
+
+window.addEventListener('scroll', scrollHeader)
 
 /*=============== SHOW SCROLL UP ===============*/
 
